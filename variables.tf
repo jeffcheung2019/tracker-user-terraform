@@ -4,5 +4,5 @@ variable "google_app_secret" {}
 variable "google_app_id" {}
 variable "facebook_app_id" {}
 variable "facebook_app_secret" {}
-
+variable "app_id" {}
 
