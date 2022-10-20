@@ -46,7 +46,7 @@ resource "aws_cognito_user_pool_client" "tracker_user_pool_client" {
   user_pool_id    = aws_cognito_user_pool.tracker_user_pool.id
   generate_secret = false
 
-  supported_identity_providers = ["Google", "Facebook"]
+  supported_identity_providers = ["Google", "facebook"]
   callback_urls                = ["com.fitnessevo://signIn"]
   logout_urls                  = ["com.fitnessevo://signOut"]
 
@@ -55,5 +55,8 @@ resource "aws_cognito_user_pool_client" "tracker_user_pool_client" {
   allowed_oauth_flows = ["code"]
 }
 
-
+resource "aws_cognito_user_pool_domain" "tracker_user_domain" {
+  domain       = "tracker-user-domain"
+  user_pool_id = aws_cognito_user_pool.tracker_user_pool.id
+}
 
