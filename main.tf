@@ -1,6 +1,6 @@
-resource "aws_amplify_app" "user_amplify" {
-  name = "user_amplify"
-
+resource "aws_amplify_app" "tracker_user_amplify" {
+  name = "tracker_user_amplify"
+  description = "Amplify app for tracker user. Only use the feature of amplify login (with integration of AWS Cognito) in mobile app."
 }
 
 resource "aws_cognito_user_pool" "tracker_user_pool" {
