@@ -46,7 +46,7 @@ resource "aws_cognito_user_pool_client" "tracker_user_pool_client" {
   user_pool_id    = aws_cognito_user_pool.tracker_user_pool.id
   generate_secret = false
 
-  supported_identity_providers = ["Google", "Facebook"]
+  supported_identity_providers = ["Google", "Facebook", "COGNITO"]
   callback_urls                = ["${var.app_id}://signIn"]
   logout_urls                  = ["${var.app_id}://signOut"]
 
